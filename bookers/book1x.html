@@ -22,12 +22,12 @@
 			</div>
 
 			<div class='RightBar' >
-				<form class='Collector' action='submitForBooking()'>
-					<input type='text' id='IpName' name='IpName' placeholder='Name' required>
-					+91<input type='text' id='IpPhone' name='IpPhone' placeholder='Phone'required>
-					<input type='email' id='IpEmail' name='IpEmail' placeholder='Email'>
+				<form class='Collector' method='GET' action='http://localhost:3000/book1x?' >
+					<input type='text' id='name' name='name' placeholder='Name' required>
+					+91<input type='text' id='phone' name='phone' placeholder='Phone'required>
+					<input type='email' id='email' name='email' placeholder='Email'>
 					<input type='checkbox' class="CheckBox" id='IpCheck' name='SaveInfo'> <p>Save this information for future usage.</p>
-					<button type='submit' onclick='' >Book Now</button>
+					<button id='bookonex' type='submit' onclick="">Book Now</button>
 				</form>
 			</div>
 		</div>
@@ -48,12 +48,27 @@
 	</footer>
 
 	<!-- Scripts -->
+	<script t>
+		$("#bookonex").click(function(){
+    console.log("invoke");
+    $.ajax({url: "http://localhost:3000/book1x",
+    type: "POST",
+    data : { "name": "Manu Thomas",
+    "phone": "8281689112",
+    "id": "f425d655-1f20-4646-b707-f2ff40f1d141"
+},
+    success: function(result){
+      $("#div1").html(result);
+    }});
+  });
+	</script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/jquery.poptrox.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script src="../assets/js/jquery.form.js" ></script>
 
 </body>
 
