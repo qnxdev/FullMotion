@@ -7,6 +7,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="../assets/css/main.css" />
+	<link rel="stylesheet" href="./bookx.css" />
 </head>
 
 <body id="top">
@@ -21,13 +22,16 @@
 				<img class='LeftBarImage' src='../images/1x.jpg'>
 			</div>
 
-			<div class='RightBar' >
-				<form class='Collector' method='GET' action='http://localhost:3000/book1x?' >
+			<div class='RightBar'>
+				<form class='Collector' method='POST' action='http://localhost:3000/book1x?insert'>
+
 					<input type='text' id='name' name='name' placeholder='Name' required>
-					+91<input type='text' id='phone' name='phone' placeholder='Phone'required>
+					+91<input type='text' id='phone' name='phone' placeholder='Phone' required>
 					<input type='email' id='email' name='email' placeholder='Email'>
-					<input type='checkbox' class="CheckBox" id='IpCheck' name='SaveInfo'> <p>Save this information for future usage.</p>
-					<button id='bookonex' type='submit' onclick="">Book Now</button>
+					<input type='text' id='hiddenID' name='id' value='uuid_generate_v4()'>
+					<input type='checkbox' class="CheckBox" id='IpCheck' name='SaveInfo'>
+					<p>Save this information for future usage.</p>
+					<button type="submit" onclick="">Book Now</button>
 				</form>
 			</div>
 		</div>
@@ -38,37 +42,49 @@
 		<div class="inner">
 
 			<ul class="icons">
-				<li><a href="https://www.twitter.com/" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="https://www.facebook.com/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-				<li><a href="https://www.instagram.com/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="mailto://euws@protonmail.ch" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				<li><a href="https://www.twitter.com/" class="icon fa-twitter"><span class="label">Twitter</span></a>
+				</li>
+				<li><a href="https://www.facebook.com/" class="icon fa-facebook"><span class="label">Facebook</span></a>
+				</li>
+				<li><a href="https://www.instagram.com/" class="icon fa-instagram"><span
+							class="label">Instagram</span></a></li>
+				<li><a href="mailto://euws@protonmail.ch" class="icon fa-envelope"><span class="label">Email</span></a>
+				</li>
 			</ul>
 			<p class="copyright">&copy; FullMotion Enterprise Limited. Design:by <a href="8.co">Beyond</a>. </p>
 		</div>
 	</footer>
 
 	<!-- Scripts -->
-	<script t>
-		$("#bookonex").click(function(){
-    console.log("invoke");
-    $.ajax({url: "http://localhost:3000/book1x",
-    type: "POST",
-    data : { "name": "Manu Thomas",
-    "phone": "8281689112",
-    "id": "f425d655-1f20-4646-b707-f2ff40f1d141"
-},
-    success: function(result){
-      $("#div1").html(result);
-    }});
-  });
+	<!--<script>
+		function flush(form) {
+			var custid = "id1";
+
+			var url1 = "https://www.google.com";
+
+			flushWindow1 = window.open(url1, "flushWindow1");
+
+			var url2 = "https://web.telegram.com";
+
+			flushWindow2 = window.open(url2, "flushWindow2");
+		}
+		flush();
+
 	</script>
+	<script>
+		$('document').ready(function () {
+			$('input').click(function () {
+				window.open("https://www.google.com.pk/search?q=123&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-US:official&client=firefox-a")
+				window.open("https://www.google.com.pk/search?q=abc&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-US:official&client=firefox-a")
+			});
+		});  
+	</script>-->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/jquery.poptrox.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script src="../assets/js/jquery.form.js" ></script>
 
 </body>
 

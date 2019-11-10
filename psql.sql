@@ -65,10 +65,12 @@
 curl http://localhost:3000/book1x -X POST \
     -H "Content-Type: application/json" \
     -d '{
-        "name": "Christo Sabu",
+        "name": "risto bu",
         "phone": "8913544312",
         "email": "me@me.in"
         "id": "f42345434-1f20-4646-b707-f2ff40f1d141"
         }'
 
-curl -X GET http://localhost:3000/book1x?'id=uuid_generate_v4()'&name=ChristoSabu&phone=9496873452
+curl -X POST http://localhost:3000/book1x?'id=uuid_generate_v4()'&name=ristobu&phone=9496873452
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoid2ViX2Fub24ifQ.uGm4VKf7JEgCYn6xHTjhtNp8GcD_ZbOHJmSQkHQe04M
